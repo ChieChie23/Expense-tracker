@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+
+<link rel="stylesheet" href="/css part/login.css">
+
+</head>
+
+<body>
+
+<div class="login-cont">
+
+
+    <div id="loginForm">
+
+        <h1>WiseL.Y</h1>
+
+        <div class="subtitle">
+
+            Login to your account
+
+        </div>
+
+        <div class="form">
+
+            <div>
+
+                <label>Email</label>
+
+                <input
+                type="email"
+                class="input"
+                id="email"
+                placeholder="Enter your Email">
+
+            </div>
+
+            <div>
+
+                <label>Password</label>
+
+                <input
+                type="password"
+                class="input"
+                id="password"
+                placeholder="Enter your password">
+
+            </div>
+
+        </div>
+
+        <div class="button">
+
+            <button
+            class="log-in"
+            onclick="login()">
+
+                Log In
+
+            </button>
+
+        </div>
+
+
+        <div
+        class="error"
+        id="errorMsg">
+
+            Invalid email or password
+
+        </div>
+
+    </div>
+
+
+    <div
+    class="success"
+    id="successMsg">
+
+        <h2>Login Successfully</h2>
+
+        <p>Welcome Back</p>
+
+    </div>
+
+</div>
+
+<script>
+
+function login(){
+
+    const email = document.getElementById("email").value.trim();
+
+    const password =document.getElementById("password").value.trim();
+
+    const error =document.getElementById("errorMsg");
+
+    if(
+
+        email ===
+        "laderachinagale@gmail.com"
+
+        &&
+
+        password ===
+        "12345"
+
+    ){
+
+        error.style.display =
+        "none";
+
+        document
+        .getElementById("loginForm")
+        .style.display =
+        "none";
+
+
+        document
+        .getElementById("successMsg")
+        .style.display =
+        "block";
+
+
+
+        setTimeout(function(){
+
+            window.location.href =
+            "dashboard.html";
+
+        }, 2000);
+
+    }
+
+    else{
+
+        error.style.display =
+        "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
+

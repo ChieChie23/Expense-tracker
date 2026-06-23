@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+    <link rel="stylesheet" href="/css part/addExpense.css">
+</head>
+<body>
+<div class="sidebar">
+
+    <div class="logo">
+        Expense Tracker
+    </div>
+
+    <ul class="menu">
+        <li><a href="/html part/dboard.html">Dashboard</a></li>
+        <li><a href="/html part/expenses.html">Expenses</a></li>
+        <li><a href="/html part/addExpenses.html">Add Expenses</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Budgets</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Goals</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+
+    <div class="logout">
+        <a href="#">Logout</a>
+    </div>
+
+</div>
+
+<div class="main-content">
+
+    <div class="Welcome-head">
+        <h1>Welcome Back!</h1>
+        <p>Track and manage your expenses.</p>
+    </div>
+
+    <div class="expense">
+        <div class="card-title">
+            <span>➕</span>
+            <h2>Add Expense</h2>
+        </div>
+
+        <form id="expenseForm">
+
+            <div class="card-content">
+
+                <div class="form-section">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" id="description">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="amount">Amount</label>
+                            <input type="number" id="amount" class="amount">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="category">
+                                <option>Select Category</option>
+                                <option>Food</option>
+                                <option>Transportation</option>
+                                <option>Shopping</option>
+                                <option>Bills</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="date">Date</label>
+                            <input type="date" id="date" class="date">
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Payment Method</label>
+                            <select id="payment" class="payment">
+                                <option>Select Method</option>
+                                <option>Cash</option>
+                                <option>GCash</option>
+                                <option>PayPal</option>
+                                <option>Maya</option>
+                                <option>Credit Card</option>
+                                <option>Bank Transfer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Notes</label>
+                            <textarea id="notes" class="note"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="illustration">
+                    <div class="receipt">
+                        <div class="coin coin1"></div>
+                        <div class="coin coin2"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="actions">
+                <button type="button" class="btn cancel" id="cancelBtn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="btn save">
+                    Save Expense
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+const expenseForm = document.getElementById("expenseForm");
+
+expenseForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const description =
+        document.getElementById("description").value;
+
+    const amount =
+        document.getElementById("amount").value;
+
+    const category =
+        document.getElementById("category").value;
+
+    const date =
+        document.getElementById("date").value;
+
+    const payment =
+        document.getElementById("payment").value;
+
+    const notes =
+        document.getElementById("notes").value;
+
+    if(
+        description === "" ||
+        amount === "" ||
+        category === "Select Category" ||
+        date === "" ||
+        payment === "Select Method"
+    ){
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    const expense = {
+        description,
+        amount,
+        category,
+        date,
+        payment,
+        notes
+    };
+
+    let expenses =
+        JSON.parse(localStorage.getItem("expenses")) || [];
+
+    expenses.push(expense);
+
+    localStorage.setItem(
+        "expenses",
+        JSON.stringify(expenses)
+    );
+
+    alert("Expense Saved Successfully!");
+
+    expenseForm.reset();
+});
+
+document
+.getElementById("cancelBtn")
+.addEventListener("click", function(){
+
+    expenseForm.reset();
+
+});
+</script>
+
+</body>
+</html>
