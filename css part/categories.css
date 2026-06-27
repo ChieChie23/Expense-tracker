@@ -197,9 +197,5 @@ body{
 /* ICONS SECTION*/
 .icon i{
     font-size: 24px;
-    color: #0e0b2e;
-    text-shadow:
-        0 0 5px #af7dff,
-        0 0 10px #cdb3f8,
-        0 0 20px #cdb3f8;
+    color: #f8bdef;
 }
