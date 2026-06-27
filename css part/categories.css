@@ -117,27 +117,10 @@ body{
     flex-wrap:wrap;
 }
 
-.search-input,
-.filter-select,
-.date-input{
-    background:#0F172A;
-    border:1px solid rgba(139,92,246,0.15);
-    color:white;
-    padding:10px 14px;
-    border-radius:8px;
-    outline:none;
-}
-
-.search-input{
-    width:250px;
-}
-
-.filter-select{
-    min-width:170px;
-}
-
-.date-input{
-    min-width:150px;
+.category p{
+    font-size: 50px;
+    color: white;
+    margin-top: 20px;
 }
 
 .add-btn{
