@@ -114,31 +114,28 @@ body{
     justify-content:space-between;
     align-items:center;
     margin:20px;
-    color: white;
+    color:white;
 }
 
 .add-btn{
-    margin-top: 10px;
-    margin-right: 20px;
-    margin-left:auto;
     background:#8B5CF6;
     color:white;
-    text-decoration:none;
+    border:none;
 
     padding:10px 18px;
-    border-radius:8px;
+    border-radius:10px;
 
-    cursor:pointer;
-    transition:.3s;
+    font-size:14px;
+    font-weight:500;
 
-    display:inline-block;
+    display:flex;
+    align-items:center;
+    gap:6px;
 }
 
 .add-btn:hover{
-    background:#A855F7;
+    background:#af62f8;
 }
-
-/* ACTION BUTTONS */
 
 .action-btn{
     background:none;
@@ -198,4 +195,166 @@ body{
 .icon i{
     font-size: 24px;
     color: #f8bdef;
+}
+
+/*FORM PART*/
+
+.form{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+
+.form-cont{
+    width:430px;
+    background:#111827;
+    border:1px solid rgba(139,92,246,.25);
+    border-radius:18px;
+    padding:30px;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.close-btn{
+    position:absolute;
+    top:18px;
+    right:22px;
+    font-size:28px;
+    color:#94A3B8;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.close-btn:hover{
+    color:#A855F7;
+    transform:rotate(90deg);
+}
+
+.popup-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.popup-icon{
+    width:65px;
+    height:65px;
+    margin:auto;
+    border-radius:50%;
+    background:#8B5CF6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    color:white;
+    margin-bottom:18px;
+}
+
+.popup-header h2{
+    color:white;
+    margin-bottom:6px;
+}
+
+.popup-header p{
+    color:#94A3B8;
+    font-size:14px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    color:#CBD5E1;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:13px 15px;
+    background:#1E293B;
+    border:2px solid transparent;
+    border-radius:10px;
+    color:white;
+    font-size:15px;
+    transition:.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+    outline:none;
+    border-color:#8B5CF6;
+}
+
+.popup-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin-top:30px;
+}
+
+.cancel-btn{
+    background:transparent;
+    color:#CBD5E1;
+    border:1px solid #475569;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+    background:#1E293B;
+}
+
+.save-btn{
+    background:#8B5CF6;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.save-btn:hover{
+    background:#A855F7;
+}
+
+.icon-option{
+    width:100%;
+    padding:13px 15px;
+
+    background:#1E293B;
+    border:2px solid transparent;
+    border-radius:10px;
+
+    color:white;
+    font-size:15px;
+
+    cursor:pointer;
+    transition:0.3s;
+
+    appearance:none;
+    box-sizing:border-box;
+}
+
+.icon-option:focus{
+    outline:none;
+    border-color:#8B5CF6;
+}
+
+.icon-option option{
+    background:#0F172A;
+    color:white;
+}
+
+.icon-option:hover{
+    border-color:#475569;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Expense Tracker</title>
 
     <link rel="stylesheet" href="/css part/categories.css">
 
@@ -35,7 +35,7 @@
 
     <div class="Welcome-head">
         <h1>Welcome Back!</h1>
-        <p>Track your Categories now !!</p>
+        <p>Create and Track your Categories now!!</p>
     </div>
 
  <div class="bottom-card">
@@ -43,7 +43,7 @@
     <div class="table-controls">
 
             <h2 class="category-title">Categories</h2>
-        <a href="/html part/addExpenses.html" class="add-btn"> + Add Category</a>
+        <button class="add-btn" onclick="openPopup()">+ Add Category</button>
 
     </div>
 
@@ -54,7 +54,6 @@
                 <tr>
                     <th>Category</th>
                     <th>Icon</th>
-                    <th>Budget</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -66,10 +65,9 @@
                     <td class="icon">
                         <i class="fa-solid fa-utensils"></i>
                     </td>
-                    <td class="expense">₱800</td>
                     <td>
-                        <button class="action-btn">✏️</button>
-                        <button class="action-btn">🗑️</button>
+                        <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
 
@@ -78,10 +76,9 @@
                     <td class="icon">
                         <i class="fa-solid fa-car"></i>
                     </td>
-                    <td class="expense">₱500</td>
                     <td>
-                        <button class="action-btn">✏️</button>
-                        <button class="action-btn">🗑️</button>
+                        <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
 
@@ -90,10 +87,9 @@
                     <td class="icon">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </td>
-                    <td class="expense">₱1,000</td>
                     <td>
-                        <button class="action-btn">✏️</button>
-                        <button class="action-btn">🗑️</button>
+                        <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
 
@@ -102,10 +98,9 @@
                     <td class="icon">
                         <i class="fa-solid fa-money-check-dollar"></i>
                     </td>
-                    <td class="income">₱25,000</td>
                     <td>
-                        <button class="action-btn">✏️</button>
-                        <button class="action-btn">🗑️</button>
+                        <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
 
@@ -114,10 +109,9 @@
                     <td class="icon">
                         <i class="fa-solid fa-tv"></i>
                     </td>
-                    <td class="expense">₱449</td>
                     <td>
-                        <button class="action-btn">✏️</button>
-                        <button class="action-btn">🗑️</button>
+                        <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
 
@@ -126,10 +120,9 @@
                     <td class="icon">
                         <i class="fa-solid fa-ellipsis"></i>
                     </td>
-                    <td class="income">₱250</td>
                     <td>
-                        <button class="action-btn">✏️</button>
-                        <button class="action-btn">🗑️</button>
+                        <button class="action-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
                 </tr>
 
@@ -141,5 +134,80 @@
 </div>
 
 </div>
+
+    <div class="form" id="form">
+       <div class="form-cont">
+
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+
+    <div class="popup-header">
+        <div class="popup-icon">
+            <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <h2>Add New Category</h2>
+        <p>Create a category for your expenses.</p>
+
+    </div>
+
+    <form id="categoryForm">
+
+        <div class="input-group">
+            <label>Category Name</label>
+            <input type="text" id="categoryName" placeholder="e.g. Food & Dining">
+        </div>
+
+        <div class="input-group">
+            <label>Budget</label>
+            <input type="number" id="budget" placeholder="₱0.00">
+        </div>
+
+        <div class="input-group">
+            <label>Icon</label>
+        <select id="icon" class="icon-option">
+            <option value="">Select an Icon</option>
+            <option>🍔 Food and Dining</option>
+            <option>🚗 Transport</option>
+            <option>🛍️ Shopping</option>
+            <option>🧾 Bills and Utilities</option>
+            <option>📺 Entertainment</option>
+            <option>☰ Others</option>
+        </select>
+        </div>
+
+        <div class="popup-buttons">
+            <button type="button" class="cancel-btn" onclick="closePopup()">
+                Cancel
+            </button>
+
+            <button type="submit" class="save-btn">
+                Save Category
+            </button>
+        </div>
+
+    </form>
+
+            </div>
+    </div>
+
 </body>
+<script>
+
+function openPopup(){
+    document.getElementById("form").style.display = "flex";
+}
+
+function closePopup(){
+    document.getElementById("form").style.display = "none";
+}
+
+window.onclick = function(event){
+    const popup = document.getElementById("form");
+
+    if(event.target == popup){
+        popup.style.display = "none";
+    }
+}
+
+</script>
 </html>
