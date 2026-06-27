@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css part/expense.css">
+</head>
+<body>
+    
+<div class="sidebar">
+    <div class="logo">Expense Tracker</div>
+
+    <ul class="menu">
+        <li><a href="/html part/dboard.html">Dashboard</a></li>
+        <li><a href="/html part/expenses.html">Expenses</a></li>
+        <li><a href="/html part/addExpenses.html">Add Expenses</a></li>
+        <li><a href="/html part/categories.html">Categories</a></li>
+        <li><a href="#">Budgets</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Goals</a></li>
+        <li><a href="/html part/calendar.html">Calendar</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+
+    <div class="logout">
+        <a href="#">Logout</a>
+    </div>
+</div>
+
+<div class="main-content">
+
+    <div class="Welcome-head">
+        <h1>Welcome Back!</h1>
+        <p>Track and manage your expenses.</p>
+    </div>
+
+ <div class="bottom-card">
+
+    <div class="category">
+        <p>Category</p>
+        </div>
+
+
+    <div class="table-controls">
+
+
+        <a href="/html part/addExpenses.html" class="add-btn"> + Add Category</a>
+
+    </div>
+
+    <div class="table-cont">
+        <table class="transaction-table">
+
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Icon</th>
+                    <th>Budget</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>McDonald's</td>
+                    <td>Food & Dining</td>
+                    <td class="expense">₱350</td>
+                    <td>
+                        <button class="action-btn">✏️</button>
+                        <button class="action-btn">🗑️</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Grab Ride</td>
+                    <td>Transport</td>
+                    <td class="expense">₱220</td>
+                    <td>
+                        <button class="action-btn">✏️</button>
+                        <button class="action-btn">🗑️</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Electric Bill</td>
+                    <td>Bills & Utilities</td>
+                    <td class="expense">₱1,800</td>
+                    <td>
+                        <button class="action-btn">✏️</button>
+                        <button class="action-btn">🗑️</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Salary</td>
+                    <td>Income</td>
+                    <td class="income">₱25,000</td>
+                    <td>
+                        <button class="action-btn">✏️</button>
+                        <button class="action-btn">🗑️</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Netflix</td>
+                    <td>Entertainment</td>
+                    <td class="expense">₱549</td>
+                    <td>
+                        <button class="action-btn">✏️</button>
+                        <button class="action-btn">🗑️</button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>
