@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css part/expense.css">
+
+    <link rel="stylesheet" href="/css part/categories.css">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     
@@ -32,19 +35,14 @@
 
     <div class="Welcome-head">
         <h1>Welcome Back!</h1>
-        <p>Track and manage your expenses.</p>
+        <p>Track your Categories now !!</p>
     </div>
 
  <div class="bottom-card">
 
-    <div class="category">
-        <p>Category</p>
-        </div>
-
-
     <div class="table-controls">
 
-
+            <h2 class="category-title">Categories</h2>
         <a href="/html part/addExpenses.html" class="add-btn"> + Add Category</a>
 
     </div>
@@ -64,9 +62,11 @@
             <tbody>
 
                 <tr>
-                    <td>McDonald's</td>
-                    <td>Food & Dining</td>
-                    <td class="expense">₱350</td>
+                    <td>Food and Dining</td>
+                    <td class="icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </td>
+                    <td class="expense">₱800</td>
                     <td>
                         <button class="action-btn">✏️</button>
                         <button class="action-btn">🗑️</button>
@@ -74,9 +74,11 @@
                 </tr>
 
                 <tr>
-                    <td>Grab Ride</td>
                     <td>Transport</td>
-                    <td class="expense">₱220</td>
+                    <td class="icon">
+                        <i class="fa-solid fa-car"></i>
+                    </td>
+                    <td class="expense">₱500</td>
                     <td>
                         <button class="action-btn">✏️</button>
                         <button class="action-btn">🗑️</button>
@@ -84,9 +86,11 @@
                 </tr>
 
                 <tr>
-                    <td>Electric Bill</td>
-                    <td>Bills & Utilities</td>
-                    <td class="expense">₱1,800</td>
+                    <td>Shopping</td>
+                    <td class="icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </td>
+                    <td class="expense">₱1,000</td>
                     <td>
                         <button class="action-btn">✏️</button>
                         <button class="action-btn">🗑️</button>
@@ -94,8 +98,10 @@
                 </tr>
 
                 <tr>
-                    <td>Salary</td>
-                    <td>Income</td>
+                    <td>Bills and Utilities</td>
+                    <td class="icon">
+                        <i class="fa-solid fa-money-check-dollar"></i>
+                    </td>
                     <td class="income">₱25,000</td>
                     <td>
                         <button class="action-btn">✏️</button>
@@ -104,9 +110,23 @@
                 </tr>
 
                 <tr>
-                    <td>Netflix</td>
                     <td>Entertainment</td>
-                    <td class="expense">₱549</td>
+                    <td class="icon">
+                        <i class="fa-solid fa-tv"></i>
+                    </td>
+                    <td class="expense">₱449</td>
+                    <td>
+                        <button class="action-btn">✏️</button>
+                        <button class="action-btn">🗑️</button>
+                    </td>
+                </tr>
+
+                   <tr>
+                    <td>Others</td>
+                    <td class="icon">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </td>
+                    <td class="income">₱250</td>
                     <td>
                         <button class="action-btn">✏️</button>
                         <button class="action-btn">🗑️</button>

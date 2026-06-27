@@ -111,16 +111,10 @@ body{
 
 .table-controls{
     display:flex;
+    justify-content:space-between;
     align-items:center;
-    gap:15px;
-    margin-bottom:20px;
-    flex-wrap:wrap;
-}
-
-.category p{
-    font-size: 50px;
+    margin:20px;
     color: white;
-    margin-top: 20px;
 }
 
 .add-btn{
@@ -200,13 +194,12 @@ body{
     background:rgba(139,92,246,0.08);
 }
 
-/* COLORS */
-.expense{
-    color:#EF4444;
-    font-weight:600;
-}
-
-.income{
-    color:#22C55E;
-    font-weight:600;
+/* ICONS SECTION*/
+.icon i{
+    font-size: 24px;
+    color: #0e0b2e;
+    text-shadow:
+        0 0 5px #af7dff,
+        0 0 10px #cdb3f8,
+        0 0 20px #cdb3f8;
 }
