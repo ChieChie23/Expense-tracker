@@ -40,7 +40,7 @@
     
         <div class="top-cont">
             <p>Budgets</p>
-            <button>+ Add Budget</button>
+            <button onclick="toggleForm()">+ Add Budget</button>
         </div>
 
         <div class="budgets-cont">
@@ -146,13 +146,46 @@
                 <p class="budget-percentage budget-percentage-gray">75%</p>
             </div>
 
-
-
-
-            
         </div>
 
+        <div class="add-update-budget-body hide" id="budgetForm">
 
+            <div class="blur-bg"></div>
+
+            <div class="add-update-budget-card">
+                <p>ADD OR UPDATE BUDGET </p>
+
+                <form action="" method="post" class="budget-form">
+
+                    <label for="">Category :</label>
+                    <select name="" id="">
+                        <option value="">-- Select Category --</option>
+                        <option value="">Food and Dining</option>
+                        <option value="">Transport</option>
+                        <option value="">Shopping</option>
+                    </select>
+
+                    <label for="">Amount :</label>
+                    <input type="number" name="" id="">
+
+                    <div class="action-button-wrapper">
+                        <input type="submit" value="Apply">
+                        <button onclick="toggleForm()" type="button" >Cancel</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div> 
+
+        <script>
+
+            function toggleForm() {
+                const card = document.getElementById("budgetForm");
+                card.classList.toggle("hide")
+            }
+
+        </script>
 
 
     </div>

@@ -101,6 +101,7 @@ body{
 .main-body {
     padding: 20px 30px;
     width: 100%;
+    position: relative;
 }
 
 
@@ -315,17 +316,106 @@ body{
 
 
 
+/* add update budget body */
+
+.add-update-budget-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* add update budget card */
+
+.add-update-budget-card {
+    background-color: #19233b;
+    width: 450px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.add-update-budget-card p {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.budget-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.budget-form label {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.budget-form select,
+.budget-form input[type=number] {
+    background-color: #0F172A;
+    color: whitesmoke;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.budget-form input[type=number]::-webkit-inner-spin-button,
+.budget-form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.budget-form select {
+    width: 50%;
+}
+
+.action-button-wrapper {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-button-wrapper input,
+.action-button-wrapper button {
+    background-color: #070B17;
+    height: 100%;
+    width: 200px;
+    border: none;
+    border-radius: 3px;
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bold;
+}
 
 
 
 
+/* extras */
+
+.blur-bg {
+    position: absolute;
+    background-color: #00000086;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(2px);
+}
 
 
 
-
-
-
-
-
-
+.hide {
+    display: none;
+}
 
