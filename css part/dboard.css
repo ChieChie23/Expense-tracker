@@ -216,26 +216,22 @@ body{
   height: 200px;
   border-radius: 50%;
   
-  /* Conic gradient defines the data segments (e.g., 70% blue, 30% grey) */
   background: conic-gradient(
     #3498db 0% 70%, 
     #e0e0e0 70% 100%
   );
   
-  /* Centering properties for the inner hole */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .chart-hole {
-  /* Inner cutout dimensions */
   width: 140px;
   height: 140px;
   border-radius: 50%;
   background-color: #ffffff;
-  
-  /* Centering properties for text */
+
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css part/report.css">
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            Expense Tracker
+        </div>
+
+        <ul class="menu">
+
+            <li><a href="/html part/dboard.html">Dashboard</a></li>
+            <li><a href="/html part/expenses.html">Expenses</a></li>
+            <li><a href="/html part/addExpenses.html">Add Expenses</a></li>
+            <li><a href="/html part/categories.html">Categories</a></li>
+            <li><a href="/html part/budget.html">Budgets</a></li>
+            <li><a href="/html part/report.html">Reports</a></li>
+            <li><a>Goals</a></li>
+            <li><a href="/html part/calendar.html">Calendar</a></li>
+            <li><a>Settings</a></li>
+
+        </ul>
+
+        <div class="logout">
+            <a href="#">Logout</a>
+        </div>
+
+    </div>
+
+    <div class="main-content">
+
+        <div class="Welcome-head">
+            <h1>Welcome Back!</h1>
+            <p>Track and manage your expenses.</p>
+        </div>
+
+
+<div class="cards-top">
+        <!-- Total Balance Card -->
+        <div class="balance-cont">
+            <div class="balance">
+                <h3>Total Expenses:</h3>
+                <h2>₱2,450.00</h2>
+            </div>
+        </div>
+
+        <!-- Total budget Card -->
+        <div class="budget-cont">
+            <div class="budget">
+                <h3>Average per Day:</h3>
+                <h2>₱79.03</h2>
+            </div>
+        </div>
+
+        <!-- Total category Card -->
+        <div class="category-cont">
+            <div class="category">
+                <h3>HIghest Expense:</h3>
+                <h2>₱250.00</h2>
+            </div>
+        </div>
+
+         <!-- Total transactions Card -->
+        <div class="transaction-cont">
+            <div class="transaction">
+                <h3>Total Transactions:</h3>
+                <h2>28</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="graph-cont">
+    <div class="pie-body">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="graph-body">
+        <canvas id="reservationsGraph"></canvas>
+    </div>
+</div>
+
+    </div>
+</div>
+
+</body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script>
+        // for reservati'on chart
+        const months = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"];
+        const reservations = [ 2900, 3500, 4500, 2200, 3300]
+
+        console.log(months);
+        console.log(reservations);
+
+    
+        // get element by id
+        let reservationCanvas = document.getElementById("reservationsGraph");
+        let roomOccupancyCanvas = document.getElementById("roomOccupancyGraph");
+
+
+        // script for reservation line graph
+       new Chart(reservationCanvas, {
+    type: 'bar',
+
+    data: {
+        labels: months,
+        datasets: [{
+            label: 'Expenses',
+            data: reservations,
+            backgroundColor: '#8B5CF6',
+            borderColor: '#8B5CF6',
+            borderWidth: 1,
+            borderRadius: 8,
+            barThickness: 60
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                align: 'start',
+                text: 'EXPENSES OVER TIME',
+                color: 'white',
+                font: {
+                    size: 20,
+                    weight: 'normal'
+                },
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+            }
+        },
+
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: "#CBD5E1"
+                }
+            },
+
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: "rgba(255,255,255,0.08)"
+                },
+                ticks: {
+                    color: "#CBD5E1"
+                }
+            }
+        }
+    }
+});
+
+        // this is for the doughnut chart
+const centerText = {
+    id: 'centerText',
+    afterDraw(chart) {
+        const { ctx } = chart;
+        const meta = chart.getDatasetMeta(0);
+
+        if (!meta.data.length) return;
+
+        const x = meta.data[0].x;
+        const y = meta.data[0].y;
+
+        ctx.save();
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        // top label
+        ctx.fillStyle = '#94A3B8';
+        ctx.font = '14px Arial';
+        ctx.fillText('Total Expenses', x, y - 15);
+
+        // amount
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 24px Arial';
+        ctx.fillText('₱10,000', x, y + 15);
+
+        ctx.restore();
+    }
+};
+
+const ctx = document.getElementById('pieChart').getContext('2d');
+
+// DATA
+const values = [3000, 5000, 2000,400,350,2500];
+const labels = ['Food and Dining', 'Transport', 'Shopping', 'Bills and Utilities', 'Entertainment', 'Others'];
+
+// total
+const total = values.reduce((a, b) => a + b, 0);
+
+// add percentages to legend labels
+const labelsWithPercent = labels.map((label, i) => {
+    const percent = ((values[i] / total) * 100).toFixed(0);
+    return `${label} (${percent}%)`;
+});
+
+new Chart(ctx, {
+    type: 'doughnut',
+
+    data: {
+        labels: labelsWithPercent,
+        datasets: [{
+            data: values,
+            backgroundColor: [
+                '#8B5CF6',
+                '#60A5FA',
+                '#F472B6',
+                '#F59E0B',
+                '#5EEAD4',
+                '#334155'
+            ],
+            borderWidth: 0
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '70%',
+
+        plugins: {
+            title: {
+                display: true,
+                align: 'start',
+                text: 'EXPENSE BY CATEGORY',
+                color: 'white',
+                font: {
+                    size: 20,
+                    weight: 'normal'
+                },
+                padding: {
+                    top: 10,
+                    bottom: 20
+                }
+            },
+
+            legend: {
+                position: 'right',
+                labels: {
+                    color: '#FFFFFF',
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                    padding: 20,
+                    font: {
+                        size: 14
+                    }
+                }
+            }
+        }
+    },
+
+    plugins: [centerText]
+});
+    </script>
+
+</html>
