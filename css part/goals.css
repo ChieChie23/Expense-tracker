@@ -148,10 +148,11 @@ body{
 .goal-slide {
     background-color: #0F172A;
     display: grid;
-    grid-template-columns: 100px 1fr 100px;
+    grid-template-columns: 125px 1fr 100px;
     min-height: 100px;
     padding: 20px 0;
     gap: 10px;
+    border: none;
     border-radius: 5px;
 }
 
@@ -169,6 +170,9 @@ body{
     font-size: 30px;
 }
 
+.details-wrapper {
+    text-align: start;
+}
 
 .details-wrapper p {
     font-weight: bold;
