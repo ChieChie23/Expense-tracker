@@ -40,12 +40,12 @@
         
         <div class="top-cont">
             <p>GOALS</p>
-            <button>+ ADD GOAL</button>
+            <button onclick="toggleAddForm()">+ ADD GOAL</button>
         </div>
 
         <div class="goals-cont">
 
-            <button class="goal-slide">
+            <button class="goal-slide" onclick="toggleEditForm()">
                 <div class="icon-wrapper">
                     <i class="fa-solid fa-laptop"></i>
                 </div>
@@ -63,7 +63,7 @@
                 </div>
             </button>
 
-            <button class="goal-slide">
+            <button class="goal-slide" onclick="toggleEditForm()">
                 <div class="icon-wrapper">
                     <i class="fa-solid fa-plane-departure"></i>
                 </div>
@@ -81,7 +81,7 @@
                 </div>
             </button>
 
-            <button class="goal-slide">
+            <button class="goal-slide" onclick="toggleEditForm()">
                 <div class="icon-wrapper">
                     <i class="fa-solid fa-vault"></i>
                 </div>
@@ -100,8 +100,137 @@
             </button>
 
         </div>
-
-        
         
     </div>
+
+    <!-- ADD GOAL FORM -->
+
+    <div class="add-goal-cont hide" id="addGoalForm">
+        <div class="blur-bg"></div>
+
+        <div class="add-goal-card">
+            <p>ADD GOAL</p>
+
+            <form action="" class="add-goal-form" method="post">
+                <label for="">Goal Title :</label>
+                <input type="text" placeholder="My goal is..." required>
+
+                <label for="">Goal :</label>
+                <input type="number" placeholder="Ex. 1000" required>
+
+                <div class="icon-wrapper">
+                    <label for="">Custom Icon <br>(Font-Awesome Icon) :</label>
+                    <div class="icon-cont" id="iconCont"></div>
+                </div>
+                <input type="text" id="iconInput" placeholder="Ex. <i class='fa-solid fa-plane'></i>">
+
+                <div class="button-wrapper">
+                    <input type="submit" value="ADD">
+                    <button type="button" onclick="toggleAddForm()">CANCEL</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- EDIT GOAL FORM -->
+
+    <div class="edit-goal-cont hide" id="editGoalForm">
+        <div class="blur-bg"></div>
+
+        <div class="edit-goal-card">
+            <p>EDIT GOAL</p>
+
+            <form action="" class="edit-goal-form" method="post">
+                <label for="">Goal :</label>
+                <select name="" id="" required>
+                    <option value=""> -- Select Goal --</option>
+                    <option value="">New Laptop</option>
+                    <option value="">Vacation Trip</option>
+                    <option value="">Emergency Fund</option>
+                </select>
+
+                <label for="">MONEY :</label>
+                <input type="number" placeholder="Ex. 1000" required>
+
+                <div class="button-wrapper">
+                    <input type="submit" value="ADD">
+                    <input type="submit" value="DEDUCT">
+                </div>
+                <button type="button" onclick="toggleEditForm()">CANCEL</button>
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- SCRIPT -->
+
+    <script>
+        
+        // VARIABLES
+        let iconInput = document.getElementById("iconInput");
+
+
+        // ============ FUNCTIONS =============
+
+        // toggle add goal form
+        function toggleAddForm () {
+            const addGoalForm = document.getElementById("addGoalForm");
+            addGoalForm.classList.toggle("hide");
+        }
+        
+        // toggle edit goal form
+        function toggleEditForm () {
+            const editGoalForm = document.getElementById("editGoalForm");
+            editGoalForm.classList.toggle("hide");
+        }
+
+
+        // Track, Clean, and show the input from input element to icon container
+        iconInput.addEventListener("input", () => {
+
+            if (/[a-zA-Z]/.test(iconInput.value)) {
+                
+                if (iconInput.value.includes("<script>")) {
+
+                    iconInput.value = "";
+                    alert("nice try");
+
+                }
+                else {
+                    
+                    const iconContainer = document.getElementById("iconCont");
+
+                    //raw value
+                    let rawInput = iconInput.value;
+
+                    //get start and end index of <i> element
+                    const firstTag = rawInput.indexOf("<i");
+                    const SecondTag = rawInput.indexOf("</i>");
+                    
+                    //cutted value
+                    let cuttedInput = rawInput.slice(firstTag, SecondTag + 4);
+
+                    //get first and end point of each half
+                    const firstEndHalf = cuttedInput.indexOf(">");
+                    const secondFirstHalf = cuttedInput.indexOf("</i>");
+
+                    //cut in half, excluding unecessary string
+                    const firstHalf = cuttedInput.slice(0, firstEndHalf + 1)
+                    const secondHalf = cuttedInput.slice(secondFirstHalf, secondFirstHalf + 4)
+
+                    //combine two half string
+                    const finalInput = firstHalf + secondHalf;
+
+                    iconContainer.innerHTML = finalInput;
+                    iconInput.value = finalInput;
+                }
+            }
+        });
+
+
+    </script>
+
 </html>

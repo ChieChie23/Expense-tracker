@@ -124,10 +124,14 @@ body{
     padding: 15px 20px;
     border: none;
     border-radius: 10px;
-
     color: whitesmoke;
     font-size: 15px;
     font-weight: bold;
+    transition: 0.2s;
+}
+
+.top-cont button:hover {
+    background-color: #b05cff;
 }
 
 
@@ -154,6 +158,11 @@ body{
     gap: 10px;
     border: none;
     border-radius: 5px;
+    transition: 0.2s;
+}
+
+.goal-slide:hover {
+    background-color: #16213a;
 }
 
 .icon-wrapper,
@@ -218,10 +227,118 @@ body{
 
 
 
-.icon-wrapper,
-.details-wrapper,
-.percentage-wrapper {
-    
+/* AND AND EDIT GOAL FORM */
+
+.add-goal-cont,
+.edit-goal-cont {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-goal-card,
+.edit-goal-card {
+    background-color: #0F172A;
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #A855F7;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 3px #A855F7);
+    color: #efefef;
+}
+
+.add-goal-card p,
+.edit-goal-card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.add-goal-form,
+.edit-goal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-goal-form label,
+.edit-goal-form label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-goal-form input[type=text],
+.add-goal-form input[type=number],
+.edit-goal-form select,
+.edit-goal-form input[type=number] {
+    background-color: #182441;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    color: #efefef;
+}
+
+.add-goal-form input[type=number]::-webkit-inner-spin-button,
+.add-goal-form input[type=number]::-webkit-outer-spin-button,
+.edit-goal-form input[type=number]::-webkit-inner-spin-button,
+.edit-goal-form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-cont {
+    background-color: #182441;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icon-cont i {
+    font-size: 30px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-wrapper input,
+.button-wrapper button {
+    background-color: #A855F7;
+    padding: 10px;
+    width: 130px;
+    border: none;
+    border-radius: 5px;
+    color: #efefef;
+    font: 20px;
+    font-weight: bold;
+}
+
+.edit-goal-form button {
+    background-color: #A855F7;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    color: #efefef;
+    font: 20px;
+    font-weight: bold;
 }
 
 
@@ -238,6 +355,39 @@ body{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* extra */
+
+.blur-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.438);
+    backdrop-filter: blur(2px);
+}
+
+
+
+.hide {
+    display: none;
+}
 
 
 
