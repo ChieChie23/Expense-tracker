@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="/css part/settings.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo">
+            Expense Tracker
+        </div>
+
+        <ul class="menu">
+            <li><a href="/html part/dboard.html">Dashboard</a></li>
+            <li><a href="/html part/expenses.html">Expenses</a></li>
+            <li><a href="/html part/addExpenses.html">Add Expenses</a></li>
+            <li><a href="/html part/categories.html">Categories</a></li>
+            <li><a href="/html part/budget.html">Budgets</a></li>
+            <li><a href="/html part/report.html">Reports</a></li>
+            <li><a href="#">Goals</a></li>
+            <li><a href="/html part/calendar.html">Calendar</a></li>
+            <li><a href="/html part/settings.html">Settings</a></li>
+        </ul>
+
+        <div class="logout">
+            <a href=" ">Logout</a>
+        </div>
+
+    </div>
+
+    <!-- this is the settings card-->
+    <div class="settings-card">
+
+        <h2>Settings</h2>
+
+        <!-- this is the settings options baka malito hehe -->
+        <div class="setting-item" id="profileBtn">
+
+            <div class="setting-left">
+                <i class="fa-regular fa-user"></i>
+
+                <div>
+                    <h3>Profile</h3>
+                    <p>Manage your account information</p>
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </div>
+
+        <!-- currency -->
+        <div class="setting-item">
+
+            <div class="setting-left">
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                <div>
+                    <h3>Currency</h3>
+                    <p>Change to your preferred currency</p>
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </div>
+
+        <!-- notifss -->
+        <div class="setting-item">
+
+            <div class="setting-left">
+                <i class="fa-regular fa-bell"></i>
+
+                <div>
+                    <h3>Notifications</h3>
+                    <p>Manage notifications</p>
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </div>
+
+        <!-- about -->
+        <div class="setting-item" id="aboutBtn">
+
+            <div class="setting-left">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <div>
+                    <h3>About</h3>
+                    <p>Version 1.0.0</p>
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </div>
+
+    </div>
+
+    <!-- eto yung profile popup form details hehe -->
+
+    <div class="modal" id="profileModal">
+
+        <div class="modal-content profile-modal">
+
+            <span class="close">&times;</span>
+
+            <div class="profile-header">
+
+                <img src="/pic/palima.jpg" class="profile-pic">
+
+                <h2>Vince Carl Palima</h2>
+
+                <p>Expense Tracker User</p>
+
+            </div>
+
+            <form class="profile-form">
+
+                <label>Full Name</label>
+                <input type="text" value="Vince Carl Palima">
+
+                <label>Email Address</label>
+                <input type="email" value="vincecarlpalima@gmail.com">
+
+                <label>Phone Number</label>
+                <input type="text" placeholder="+63">
+
+                <label>Occupation</label>
+                <input type="text" placeholder="Student">
+
+                <button type="submit">
+                    Save Changes
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- eto yung about details popup-->
+
+  <div class="modal" id="aboutModal">
+
+    <div class="modal-content about-modal">
+
+        <span class="close">&times;</span>
+
+        <div class="about-header">
+            <i class="fa-solid fa-wallet"></i>
+            <h2>Expense Tracker</h2>
+            <p>Version 1.0.0</p>
+        </div>
+
+        <div class="about-body">
+
+            <h3>About the System</h3>
+
+            <p>
+                Expense Tracker is a web-based application designed to help users
+                record their daily expenses, manage budgets, set goals, and monitor their
+                spending habits. The system provides an organized and simple way
+                to keep track of personal finances through an easy-to-use dashboard.
+            </p>
+
+            <h3>Features</h3>
+
+            <ul>
+                <li>  ✅ Add and manage expenses </li>
+                <li>  ✅ Categorize expenses </li>
+                <li>  ✅ Set budgets for expenses </li>
+                <li>  ✅ Generate expense reports </li>
+                <li>  ✅ Set goals to achieve </li>
+                <li>  ✅ A calendar to track dates </li>
+            </ul>
+
+            <h3>Developed By</h3>
+
+            <p>
+                China Gale B. Ladera<br>
+                Vince Carl P. Palima<br>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <script>
+
+        function setupModal(buttonId, modalId){
+
+            const button = document.getElementById(buttonId);
+            const modal = document.getElementById(modalId);
+
+            const close = modal.querySelector(".close");
+
+            button.addEventListener("click", function(){
+
+                modal.style.display = "flex";
+
+            });
+
+            close.addEventListener("click", function(){
+
+                modal.style.display = "none";
+
+            });
+
+            window.addEventListener("click", function(e){
+
+                if(e.target === modal){
+
+                    modal.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+        setupModal("profileBtn","profileModal");
+        setupModal("aboutBtn","aboutModal");
+
+    </script>
+
+</body>
+</html>
