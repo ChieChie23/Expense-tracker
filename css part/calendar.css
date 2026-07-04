@@ -105,7 +105,10 @@ body{
     margin-left: 50px;
     background:#0F172A;
     padding:20px;
+     border:1px solid rgba(139,92,246,0.15);
     border-radius:15px;
+        box-shadow:
+        0 0 20px rgba(139,92,246,0.08);
 }
 
 .fc{

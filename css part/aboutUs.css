@@ -108,98 +108,12 @@ body{
     font-size:15px;
 }
 
-/* this is the settings card */
-
-.settings-card{
-    width:90%;
-    height: fit-content;
-
-    background:#0F172A;
-    border:1px solid rgba(139,92,246,0.2);
-    border-radius:18px;
-
-    padding:25px;
-    margin: 30px;
-    margin-top:30px;
-    box-shadow:0 0 20px rgba(0,0,0,.3);
-}
-
-.settings-card h2{
-    color:#fff;
-    margin-bottom:20px;
-    font-size:28px;
-}
-
-.setting-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-    cursor:pointer;
-}
-
-
-.setting-item:hover{
-    background:rgba(168,85,247,.08);
-    border-radius:10px;
-    padding-left:10px;
-    padding-right:10px;
-}
-
-.setting-left{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.setting-left i{
-    width:45px;
-    height:45px;
-    border-radius:12px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:rgba(168,85,247,.15);
-    color:#A855F7;
-    font-size:20px;
-}
-
-.setting-left h3{
-    color:white;
-    font-size:18px;
-    margin-bottom:5px;
-}
-
-.setting-left p{
-    color:#94A3B8;
-    font-size:14px;
-}
-
-.arrow{
-    color:#94A3B8;
-    transition:.3s;
-}
-
-.setting-item:hover .arrow{
-    color:#A855F7;
-    transform:translateX(5px);
-}
-
-/* this section is for the profile */
-
 .modal{
-    display:none;
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.6);
+    display:flex;
     justify-content:center;
     align-items:center;
-    z-index:100; /*set this up because this needs to be at the top incase you forgot what its use*/
+    width:100%;
+    height:100vh;
 }
 
 .modal-content{
@@ -250,90 +164,6 @@ body{
 
 .modal-content button:hover{
     background:#9333EA;
-}
-
-/* Close button :)) */
-
-.close{
-    position:absolute;
-    top:12px;
-    right:18px;
-    color:white;
-    font-size:28px;
-    cursor:pointer;
-}
-
-.profile-modal{
-    width:550px;
-    background:#0F172A;
-    border-radius:20px;
-    padding:30px;
-}
-
-.profile-header{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-bottom: 25px;
-}
-
-.profile-pic{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid #A855F7;
-    margin-bottom: 15px;
-}
-
-.profile-header h2{
-    color:white;
-    margin-bottom:5px;
-}
-
-.profile-header p{
-    color:#94A3B8;
-    margin-bottom:15px;
-}
-
-.profile-form{
-    margin-bottom: 30px;
-    display:flex;
-    flex-direction:column;
-}
-
-.profile-form label{
-    color:#CBD5E1;
-    margin-top:12px;
-    margin-bottom:6px;
-}
-
-.profile-form input{
-    background:#1E293B;
-    border:1px solid #334155;
-    color:white;
-    padding:12px;
-    border-radius:8px;
-    outline:none;
-}
-
-.profile-form input:focus{
-    border-color:#A855F7;
-}
-
-.profile-form button{
-    margin-top:25px;
-    background:#822fcf;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.profile-form button:hover{
-    background:#a047f3;
 }
 
 /*Para sa about us */
