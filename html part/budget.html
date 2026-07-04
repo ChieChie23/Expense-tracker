@@ -181,6 +181,17 @@
 
         <script>
 
+    const links = document.querySelectorAll(".menu a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });           
+
             function toggleForm() {
                 const card = document.getElementById("budgetForm");
                 card.classList.toggle("hide")

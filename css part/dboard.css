@@ -59,6 +59,12 @@ body{
     transition:0.3s;
 }
 
+.menu a.active{
+    background: rgba(139,92,246,0.25);
+    color: #A855F7;
+    border-radius: 8px;
+}
+
 .menu a:hover{
     background:rgba(139,92,246,0.15);
     color:#A855F7;

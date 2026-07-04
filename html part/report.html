@@ -95,7 +95,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-    <script>
+<script>
+
+    const links = document.querySelectorAll(".menu a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+
         // for reservati'on chart
         const months = ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"];
         const reservations = [ 2900, 3500, 4500, 2200, 3300]

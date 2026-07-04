@@ -26,7 +26,8 @@
             <li><a href="/html part/report.html">Reports</a></li>
             <li><a href="/html part/goals.html">Goals</a></li>
             <li><a href="/html part/calendar.html">Calendar</a></li>
-            <li><a href="/html part/settings.html">Settings</a></li>
+            <li><a href="/html part/profile.html">Profile</a></li>
+            <li><a href="/html part/aboutUs.html">About Us</a></li>
 
         </ul>
 
@@ -169,6 +170,17 @@
 
     <script>
         
+    const links = document.querySelectorAll(".menu a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
+
+        if (linkPage === currentPage) {
+        link.classList.add("active");
+        }
+    });
+
         // VARIABLES
         let iconInput = document.getElementById("iconInput");
 

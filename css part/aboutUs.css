@@ -50,6 +50,12 @@ body{
     margin:12px 0;
 }
 
+.menu a.active{
+    background: rgba(139,92,246,0.25);
+    color: #A855F7;
+    border-radius: 8px;
+}
+
 .menu a{
     display:block;
     padding:10px 20px;

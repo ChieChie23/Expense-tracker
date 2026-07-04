@@ -189,6 +189,18 @@
 
 
     <script>
+
+    const links = document.querySelectorAll(".menu a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+
         // for reservati'on chart
         const months = ["January", "Febuary", "March", "April", "May", "June", "July"];
         const reservations = [ 2000, 500, 4500, 1200, 700, 3500, 5000]
